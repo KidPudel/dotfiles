@@ -45,7 +45,7 @@
   ".zshrc".source = ~/dotfiles/zshrc/.zshrc; 
   ".config/nix".source = ~/dotfiles/nix;
   ".config/tmux".source = ~/dotfiles/tmux;
-  ".config/starship".source = ~/dotfiles/starship;
+  ".config/starship.toml".source = ~/dotfiles/starship/starship.toml;
 
 
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
