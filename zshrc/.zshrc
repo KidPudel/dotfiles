@@ -24,7 +24,16 @@ export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 
 # zsh extension
 eval "$(starship init zsh)"
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Source zsh-autosuggestions
+if [ -f /nix/store/*-zsh-autosuggestions*/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  source /nix/store/*-zsh-autosuggestions*/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+# Source zsh-syntax-highlighting
+if [ -f /nix/store/*-zsh-syntax-highlighting*/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /nix/store/*-zsh-syntax-highlighting*/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
