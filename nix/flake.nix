@@ -50,7 +50,7 @@
             pkgs.zsh-autosuggestions
             pkgs.zsh-syntax-highlighting
             pkgs.starship
-            pkgs.neofetch
+            pkgs.llvm_18
         ];
 
     # here we can add some other stuff
