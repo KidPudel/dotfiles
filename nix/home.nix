@@ -46,6 +46,7 @@
   ".config/nix".source = ~/dotfiles/nix;
   ".config/tmux".source = ~/dotfiles/tmux;
   ".config/starship.toml".source = ~/dotfiles/starship/starship.toml;
+  ".config/nvim".source = ~/dotfiles/nvim;
 
 
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
