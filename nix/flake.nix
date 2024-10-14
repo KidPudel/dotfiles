@@ -50,7 +50,6 @@
             pkgs.zsh-autosuggestions
             pkgs.zsh-syntax-highlighting
             pkgs.starship
-            pkgs.llvm_18
         ];
 
     # here we can add some other stuff
@@ -68,6 +67,7 @@
         casks = [
             "hammerspoon"
             "wezterm"
+            "llvm@18"
         ];
         onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;
