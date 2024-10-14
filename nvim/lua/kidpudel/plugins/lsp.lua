@@ -15,19 +15,20 @@ return {
 			auto_install = true,
 		},
 		-- full control of setup
-		-- config = function()
-		--     require("mason-lspconfig").setup({
-		--         ensure_installed = {
-		--             "lua_ls",
-		--             "gopls",
-		--             "html",
-		--             "jsonls",
-		--             "pyright",
-		--             "dockerls",
-		--             "docker_compose_language_service",
-		--         },
-		--     })
-		-- end,
+		config = function()
+		    require("mason-lspconfig").setup({
+		        ensure_installed = {
+		            "lua_ls",
+		            "gopls",
+                    "ols",
+		            "html",
+		            "jsonls",
+		            "pyright",
+		            "dockerls",
+		            "docker_compose_language_service",
+		        },
+		    })
+		end,
 	},
 
 	-- setup the communication between nvim and lsp
