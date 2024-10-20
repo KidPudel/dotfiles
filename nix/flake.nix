@@ -67,6 +67,8 @@
         casks = [
             "hammerspoon"
             "wezterm"
+        ];
+        brews = [
             "llvm@18"
         ];
         onActivation.cleanup = "zap";
