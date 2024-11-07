@@ -4,28 +4,28 @@ return {
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {
-				go = { "gofmt", "golines", "goimports-reviser" }, -- gofmt is not in mason, it is a part of golang toolchain
+				go = { "goimports-reviser" }, -- gofmt is not in mason, it is a part of golang toolchain
 				python = { "black" },
 				lua = { "stylua" },
 				html = { "prettier" },
 				json = { "prettier" },
 				markdown = { "prettier" },
 			},
-			formatters = {
-				golines = {
-					command = "golines",
-					args = {
-						"-m",
-						"100",
-					},
-				},
-			},
-			-- format_on_save = function(bufnr)
-			-- 	if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
-			-- 		return
-			-- 	end
-			-- 	return { timeout_ms = 500, lsp_format = "fallback" }
-			-- end,
+			-- formatters = {
+			-- 	golines = {
+			-- 		command = "golines",
+			-- 		args = {
+			-- 			"-m",
+			-- 			"100",
+			-- 		},
+			-- 	},
+			-- },
+			format_on_save = function(bufnr)
+				if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+					return
+				end
+				return { timeout_ms = 500, lsp_format = "fallback" }
+			end,
 		})
 		-- Helper function to check if there is a visual selection
 		vim.keymap.set({ "n", "v" }, "<leader>cf", function()

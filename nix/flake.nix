@@ -50,6 +50,7 @@
             pkgs.zsh-autosuggestions
             pkgs.zsh-syntax-highlighting
             pkgs.starship
+            pkgs.s3cmd
         ];
 
     # here we can add some other stuff
