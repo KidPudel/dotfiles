@@ -74,6 +74,7 @@
         brews = [
             "llvm@18"
 			"ghostscript"
+			"tesseract-lang"
         ];
         onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;
