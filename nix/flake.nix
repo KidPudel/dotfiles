@@ -52,6 +52,7 @@
             pkgs.starship
             pkgs.s3cmd
 			pkgs.nodejs_22
+			pkgs.tesseract4
         ];
 
     # here we can add some other stuff
