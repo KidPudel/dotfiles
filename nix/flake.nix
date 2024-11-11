@@ -51,7 +51,7 @@
             pkgs.zsh-syntax-highlighting
             pkgs.starship
             pkgs.s3cmd
-			pkgs.node
+			pkgs.nodejs_22
         ];
 
     # here we can add some other stuff
