@@ -51,6 +51,7 @@
             pkgs.zsh-syntax-highlighting
             pkgs.starship
             pkgs.s3cmd
+			pkgs.node
         ];
 
     # here we can add some other stuff
