@@ -73,6 +73,7 @@
         ];
         brews = [
             "llvm@18"
+			"ghostscript"
         ];
         onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;
