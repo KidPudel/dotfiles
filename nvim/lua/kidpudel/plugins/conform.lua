@@ -8,8 +8,10 @@ return {
 				python = { "black" },
 				lua = { "stylua" },
 				html = { "prettier" },
-				json = { "prettier" },
+				json = { "biome" },
 				markdown = { "prettier" },
+				javascript = { "biome" },
+				typescript = { "biome" },
 			},
 			-- formatters = {
 			-- 	golines = {
