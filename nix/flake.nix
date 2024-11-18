@@ -52,7 +52,7 @@
             pkgs.starship
             pkgs.s3cmd
 			pkgs.nodejs_22
-			pkgs.tesseract4
+			# pkgs.tesseract4
         ];
 
     # here we can add some other stuff
@@ -73,8 +73,8 @@
         ];
         brews = [
             "llvm@18"
-			"ghostscript"
-			"tesseract-lang"
+			# "ghostscript"
+			# "tesseract-lang"
         ];
         onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;
