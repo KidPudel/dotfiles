@@ -73,6 +73,7 @@
         ];
         brews = [
             "llvm@18"
+			"protoc-gen-go"
 			# "ghostscript"
 			# "tesseract-lang"
         ];
