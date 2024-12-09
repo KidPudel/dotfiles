@@ -52,6 +52,7 @@
             pkgs.starship
             pkgs.s3cmd
 			pkgs.nodejs_22
+			pkgs.redis
 			# pkgs.tesseract4
         ];
 
