@@ -37,7 +37,9 @@ fi
 
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
-export PATH="/Users/iggysleepy/dev/general/odin/Odin:$PATH"
+export PATH="$HOME/dev/general/odin/Odin:$PATH"
+
+export PATH="$HOME/kafka_2.13-3.9.0/bin:$PATH"
 
 
 eval "$(zoxide init --cmd cd zsh)"
