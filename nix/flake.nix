@@ -5,16 +5,11 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-# managing dotfiles
-    home-manager = {
-        url = "github:nix-community/home-manager";
-        inputs.nixpkgs.follows = "nixpkgs";
-    };
     # homebrew
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
   let
     configuration = { pkgs, config, ... }: {
       # allow closed source and unfree apps
@@ -33,7 +28,8 @@
             pkgs.neovim
             pkgs.yazi
             pkgs.tmux
-            pkgs.zellij
+			pkgs.stow
+            # pkgs.zellij
             pkgs.zoxide
             pkgs.postgresql
             pkgs.sqlite
@@ -157,11 +153,6 @@
 
                 autoMigrate = true;
             };
-        }
-        home-manager.darwinModules.home-manager {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.iggysleepy = import ./home.nix;
         }
       ];
     };
