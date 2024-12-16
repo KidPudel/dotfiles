@@ -58,7 +58,6 @@
         name = "iggysleepy";
         home = "/Users/iggysleepy";
     };
-    home-manager.backupFileExtension = "backup";
     nix.configureBuildUsers = true;
     nix.useDaemon = true;
 
