@@ -31,7 +31,7 @@
 			pkgs.stow
             # pkgs.zellij
             pkgs.zoxide
-            pkgs.postgresql
+            pkgs.postgresql_17
             pkgs.sqlite
             pkgs.ripgrep
             pkgs.raylib
