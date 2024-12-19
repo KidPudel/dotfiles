@@ -31,7 +31,7 @@
 			pkgs.stow
             # pkgs.zellij
             pkgs.zoxide
-            # pkgs.postgresql
+            pkgs.postgresql
             pkgs.sqlite
             pkgs.ripgrep
             pkgs.raylib
@@ -70,7 +70,7 @@
         brews = [
             "llvm@18"
 			"protoc-gen-go"
-			"postgresql@17"
+			# "postgresql@17"
 			# "ghostscript"
 			# "tesseract-lang"
         ];
