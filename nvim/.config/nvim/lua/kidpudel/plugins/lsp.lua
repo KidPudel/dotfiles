@@ -20,7 +20,7 @@ return {
 		--         ensure_installed = {
 		--             "lua_ls",
 		--             "gopls",
-        --             "ols",
+		--             "ols",
 		--             "html",
 		--             "jsonls",
 		--             "pyright",
@@ -95,9 +95,9 @@ return {
 					},
 				},
 			})
-            lspconfig.ols.setup({
-                capabilities = capabilities,
-            })
+			lspconfig.ols.setup({
+				capabilities = capabilities,
+			})
 			lspconfig.html.setup({
 				capabilities = capabilities,
 			})
@@ -126,7 +126,7 @@ return {
 					-- if inlay supported
 					if client.server_capabilities.inlayHintProvider then
 						vim.lsp.inlay_hint.enable(true, bufnr)
-						print("Inlay hint is enabled for the buffer: ", vim.lsp.inlay_hint.is_enabled(bufnr))
+						-- print("Inlay hint is enabled for the buffer: ", vim.lsp.inlay_hint.is_enabled(bufnr))
 					end
 
 					-- context bar

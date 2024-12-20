@@ -37,16 +37,20 @@ return {
 			{ "<leader>po", "<cmd>Telescope buffers<cr>", desc = "Search for open buffers" },
 			-- recent
 			{ "<leader>pr", "<cmd>Telescope oldfiles<cr>", desc = "Search for previously opened files" },
-			-- quickfix
-			{ "<leader>nq", "<cmd>Telescope quickfix<cr>", desc = "Quick fix" },
 			-- references
 			{ "<leader>gr", "<cmd>Telescope lsp_references<cr>", desc = "show references" },
 			{ "<leader>gi", "<cmd>Telescope lsp_incoming_calls<cr>", desc = "show incomming calls" },
 			{ "<leader>go", "<cmd>Telescope lsp_outgoing_calls<cr>", desc = "show outgoing calls" },
 			-- symbols
-			{ "<leader>cs", "<cmd>Telescope lsp_document_symbols<cr>", desc = "File symbols" },
+			{ "<leader>cs", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Buffer symbols" },
+			{ "<leader>ps", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "Workspace symbols" },
+			-- jumplist
+			{ "<leader>pj", "<cmd>Telescope jumplist<cr>", desc = "Jumplist" },
 			-- list previously opened files
 			-- search command history
+			{ "<leader>hc", "<cmd>Telescope command_history<cr>", desc = "Command history" },
+			-- search search history
+			{ "<leader>hs", "<cmd>Telescope search_history<cr>", desc = "Search history" },
 			-- list man, help, available commands
 			-- list available color themes
 			{ "<leader>kt", "<cmd>Telescope colorscheme<cr>", desc = "Available colorschemes" },
