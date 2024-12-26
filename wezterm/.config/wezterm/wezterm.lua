@@ -17,6 +17,14 @@ return {
 		bottom = 0,
 	},
 
+	keys = {
+		{
+			key = "f",
+			mods = "CMD|CTRL",
+			action = wezterm.action.ToggleFullScreen,
+		},
+	},
+
 	macos_window_background_blur = 30,
 
 	cursor_blink_rate = 0,
