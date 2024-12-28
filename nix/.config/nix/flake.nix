@@ -106,7 +106,7 @@
           dock.autohide = true;
           dock.persistent-apps = [
             "/Applications/Arc.app"
-            "/Applications/Wezterm.app"
+            "/Applications/Ghostty.app"
             "/Applications/Obsidian.app"
             "/System/Applications/Notes.app"
           ];
