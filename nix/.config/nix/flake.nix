@@ -66,6 +66,7 @@
         casks = [
             "hammerspoon"
             "wezterm"
+			"ghostty"
         ];
         brews = [
             "llvm@18"
