@@ -1,6 +1,7 @@
 font-family = "Roboto Mono"
 font-style = "bold"
 font-size = 13.0
+font-feature = "-calt"
 
 macos-titlebar-style = hidden
 
