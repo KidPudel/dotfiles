@@ -35,6 +35,10 @@ if [ -f /nix/store/*-zsh-syntax-highlighting*/share/zsh-syntax-highlighting/zsh-
   source /nix/store/*-zsh-syntax-highlighting*/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
+# allow fzf commands
+
+<(fzf --zsh)
+
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 export PATH="$HOME/Odin:$PATH"
