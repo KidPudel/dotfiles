@@ -72,6 +72,7 @@
             "llvm@18"
 			"protoc-gen-go"
 			"fzf"
+			"bat"
 			# "postgresql@17"
 			# "ghostscript"
 			# "tesseract-lang"
