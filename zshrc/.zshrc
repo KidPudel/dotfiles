@@ -9,7 +9,7 @@ eval "$(pyenv init -)"
 alias python=python3
 alias pip=pip3
 
-alias inv="nvim $(fzf --preview 'bat --color=always {}')"
+alias inv='nvim $(fzf --preview "bat --color=always {}")'
 
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
