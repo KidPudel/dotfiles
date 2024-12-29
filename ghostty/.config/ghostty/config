@@ -8,6 +8,8 @@ macos-titlebar-style = hidden
 window-padding-x = 0
 window-padding-y = 0
 
+mouse-hide-while-typing = true
+
 foreground = "#ebdbb2"
 background = "#1d2021"
 
