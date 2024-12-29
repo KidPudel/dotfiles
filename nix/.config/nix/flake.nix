@@ -71,6 +71,7 @@
         brews = [
             "llvm@18"
 			"protoc-gen-go"
+			"fzf"
 			# "postgresql@17"
 			# "ghostscript"
 			# "tesseract-lang"
