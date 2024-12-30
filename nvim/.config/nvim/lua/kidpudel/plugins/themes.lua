@@ -1,43 +1,22 @@
 return {
-	--{
-	--	"mellow-theme/mellow.nvim",
-	--	name = "mellow",
-	--	priority = 1000,
-	--	config = function ()
-	--		vim.cmd("colorscheme mellow")
-	--	end
-	--},
-
-	-- {
-	-- 	"ellisonleao/gruvbox.nvim",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("gruvbox").setup({
-	-- 			contrast = "hard",
-	-- 		})
-	-- 		vim.cmd("colorscheme gruvbox")
-	-- 	end,
-	-- },
 	{
-		"rebelot/kanagawa.nvim",
+		"ellisonleao/gruvbox.nvim",
 		priority = 1000,
 		config = function()
-			require("kanagawa").setup({
-				theme = "wave",
+			require("gruvbox").setup({
+				contrast = "hard",
 			})
-			vim.cmd("colorscheme kanagawa")
+			vim.cmd("colorscheme gruvbox")
 		end,
 	},
-	-- {
-	-- 	"catppuccin/nvim",
-	-- 	lazy = false,
-	-- 	name = "catppuccin",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("catppuccin").setup({
-	-- 			--contrast = "hard",
-	-- 		})
-	-- 		vim.cmd("colorscheme catppuccin")
-	-- 	end,
-	-- },
+	{
+		"rebelot/kanagawa.nvim",
+		priority = 1001,
+		config = function()
+			require("kanagawa").setup({
+				theme = "dragon",
+			})
+			vim.cmd("colorscheme kanagawa-dragon")
+		end,
+	},
 }
