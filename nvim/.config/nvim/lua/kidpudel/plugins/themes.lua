@@ -8,14 +8,24 @@ return {
 	--	end
 	--},
 
+	-- {
+	-- 	"ellisonleao/gruvbox.nvim",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("gruvbox").setup({
+	-- 			contrast = "hard",
+	-- 		})
+	-- 		vim.cmd("colorscheme gruvbox")
+	-- 	end,
+	-- },
 	{
-		"ellisonleao/gruvbox.nvim",
+		"ebelot/kanagawa.nvim",
 		priority = 1000,
 		config = function()
-			require("gruvbox").setup({
-				contrast = "hard",
+			require("kanagawa").setup({
+				theme = "wave",
 			})
-			vim.cmd("colorscheme gruvbox")
+			vim.cmd("colorscheme kanagawa")
 		end,
 	},
 	-- {
