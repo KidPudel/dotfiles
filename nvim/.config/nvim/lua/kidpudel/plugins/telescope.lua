@@ -21,9 +21,9 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		keys = {
 			-- file picker
-			{ "<leader>p", "", desc = "File picker" },
+			-- { "<leader>p", "", desc = "File picker" },
 			-- find files in current directory
-			{ "<leader>pf", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+			-- { "<leader>pf", "<cmd>Telescope find_files<cr>", desc = "Find files" },
 			{
 				"<leader>ph",
 				"<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files,-u<cr>",
