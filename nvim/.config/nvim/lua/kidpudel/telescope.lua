@@ -58,6 +58,13 @@ return {
 			{ "<leader>kt", "<cmd>Telescope colorscheme<cr>", desc = "Available colorschemes" },
 		},
 		lazy = false,
+		config = function()
+			require("telescope").setup({
+				pickers = {
+					theme = "ivy",
+				},
+			})
+		end,
 	},
 	{
 		"nvim-telescope/telescope-ui-select.nvim",
