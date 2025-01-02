@@ -40,7 +40,7 @@ fi
 
 # allow fzf commands
 
-<(fzf --zsh)
+eval "$(fzf --zsh)"
 
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 

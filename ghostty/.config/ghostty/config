@@ -14,8 +14,8 @@ mouse-hide-while-typing = true
 
 macos-option-as-alt = true
 
-theme = "Kanagawa Dragon"
-#theme = GruvBoxDark
+#theme = "Kanagawa Dragon"
+theme = GruvBoxDark
 
 
 # gruvbox theme --------------
