@@ -20,7 +20,7 @@
         [
             # gui apps
             # pkgs.wezterm
-            pkgs.raycast
+            # pkgs.raycast
 
             # for creating app aliases
             pkgs.mkalias
@@ -65,8 +65,9 @@
         enable = true;
         casks = [
             "hammerspoon"
-            "wezterm"
+            # "wezterm"
 			"ghostty"
+			"raycast"
         ];
         brews = [
             "llvm@18"

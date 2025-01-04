@@ -34,6 +34,8 @@ return {
 		{ "<leader>ps", "<cmd>FzfLua lsp_live_workspace_symbols<cr>", desc = "Workspace symbols" },
 		{ "<leader>fk", "<cmd>FzfLua keymaps<cr>", desc = "Keymaps docs" },
 		{ "<leader>fq", "<cmd>FzfLua quickfix<cr>", desc = "Quickfix" },
+
+		{ "<leader>fc", "<cmd>FzfLua colorschemes<cr>", desc = "Colorschemes" },
 		-- leader h to switch hints
 	},
 }
