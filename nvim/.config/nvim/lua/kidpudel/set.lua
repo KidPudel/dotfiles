@@ -48,4 +48,3 @@ vim.keymap.set("n", "<C-k>", "<cmd>:m .-2<cr>")
 vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
 -- Move selected block of code up
 vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
-

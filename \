@@ -18,37 +18,12 @@ return {
 	},
 	-- subtle, and not distracting dark theme, less vibrant than gruvbox
 	-- very beautiful, but in practice, not comprehending with it as well as i do in gruvbox
-	-- it IS simply doesnt work for me, colors are not organized the way for me to quickly parse it, i quicker parse the plain white text
-	-- but i can make it better, by customizing it!
 	{
 		"rebelot/kanagawa.nvim",
 		config = function()
 			require("kanagawa").setup({
 				keywordStyle = { italic = false },
-				overrides = function(colors)
-					local palette = colors.palette
-					return {
-						String = { italic = true },
-						Boolean = { fg = palette.dragonPink },
-						Constant = { fg = palette.dragonPink },
-
-						Identifier = { fg = palette.dragonBlue },
-						Statement = { fg = palette.dragonBlue },
-						-- Operator = { fg = palette.dragonBlue2 },
-						Operator = { fg = palette.dragonGray2 },
-						Keyword = { fg = palette.dragonRed },
-						-- names
-						Function = { fg = palette.dragonGreen },
-
-						Type = { fg = palette.dragonYellow },
-
-						Special = { fg = palette.dragonOrange },
-
-						-- experemental
-						["@lsp.typemod.function.readonly"] = { fg = palette.dragonBlue },
-						["@variable.member"] = { fg = palette.dragonBlue },
-					}
-				end,
+				transparent = true,
 			})
 			vim.cmd("colorscheme kanagawa-dragon")
 		end,
@@ -69,17 +44,13 @@ return {
 	-- },
 	--
 	-- minimal, definitely not ditracting theme, but could have same side effect of being depressing
-	-- too low contrasty
 	{
 		"aktersnurra/no-clown-fiesta.nvim",
 		config = function()
-			local palette = require("no-clown-fiesta.palette")
 			require("no-clown-fiesta").setup({
-				-- transparent = true,
+				transparent = true,
 				styles = {
 					comments = { italic = true },
-					match_paren = { underline = false, bg = palette.gray },
-					PmenuSel = { bg = palette.yellow },
 				},
 			})
 		end,

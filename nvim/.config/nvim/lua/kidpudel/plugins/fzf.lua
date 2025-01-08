@@ -36,6 +36,7 @@ return {
 		{ "<leader>fq", "<cmd>FzfLua quickfix<cr>", desc = "Quickfix" },
 
 		{ "<leader>fc", "<cmd>FzfLua colorschemes<cr>", desc = "Colorschemes" },
+		{ "<leader>fh", "<cmd>FzfLua command_history<cr>", desc = "Command history" },
 		-- leader h to switch hints
 	},
 }
