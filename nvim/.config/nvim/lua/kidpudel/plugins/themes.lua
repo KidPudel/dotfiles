@@ -16,10 +16,6 @@ return {
 	-- 		-- vim.cmd("colorscheme gruvbox")
 	-- 	end,
 	-- },
-	-- subtle, and not distracting dark theme, less vibrant than gruvbox
-	-- very beautiful, but in practice, not comprehending with it as well as i do in gruvbox
-	-- it IS simply doesnt work for me, colors are not organized the way for me to quickly parse it, i quicker parse the plain white text
-	-- but i can make it better, by customizing it!
 	{
 		"rebelot/kanagawa.nvim",
 		config = function()
@@ -33,18 +29,18 @@ return {
 						Constant = { fg = palette.dragonPink },
 
 						Identifier = { fg = palette.dragonBlue },
-						Statement = { fg = palette.dragonBlue },
-						-- Operator = { fg = palette.dragonBlue2 },
+						Statement = { fg = palette.dragonBlue }, -- logic, focus
 						Operator = { fg = palette.dragonGray2 },
-						Keyword = { fg = palette.dragonRed },
-						-- names
-						Function = { fg = palette.dragonGreen },
+						Keyword = { fg = palette.dragonRed }, -- strength of builtin keywords (core)
+						-- Function = { fg = palette.dragonGreen }, -- v1. i like green functions
+						Function = { fg = palette.dragonOrange }, -- v2. action
 
-						Type = { fg = palette.dragonYellow },
+						-- Type = { fg = palette.dragonYellow }, -- v1. creativity of custom types
+						Type = { fg = palette.dragonGreen }, -- v2. Newness
 
-						Special = { fg = palette.dragonOrange },
+						-- Special = { fg = palette.dragonOrange }, -- v1. which emphesises the maturity over the new types
+						Special = { fg = palette.dragonYellow }, -- v2. cheers, that this type is builtin
 
-						-- experemental
 						["@lsp.typemod.function.readonly"] = { fg = palette.dragonBlue },
 						["@variable.member"] = { fg = palette.dragonBlue },
 					}
@@ -53,23 +49,6 @@ return {
 			vim.cmd("colorscheme kanagawa-dragon")
 		end,
 	},
-	-- the most minimalistic color scheme
-	-- my second favourite, but it is too blue
-	-- comprehension is on point as well
-	-- {
-	-- 	"shaunsingh/nord.nvim",
-	-- 	config = function()
-	-- 		vim.g.nord_italic = false
-	-- 		vim.g.nord_disable_background = true
-	-- 	end,
-	--
-	-- 	callback = function()
-	-- 		vim.api.nvim_set_hl(0, "Normal", { bg = "#262A33" })
-	-- 	end,
-	-- },
-	--
-	-- minimal, definitely not ditracting theme, but could have same side effect of being depressing
-	-- too low contrasty
 	{
 		"aktersnurra/no-clown-fiesta.nvim",
 		config = function()

@@ -38,7 +38,7 @@ return {
 		},
 		zen = {
 			toggles = {
-				dim = true,
+				dim = false,
 				git_signs = false,
 				mini_diff_signs = false,
 				inlay_hints = false,
@@ -53,6 +53,8 @@ return {
 		styles = {
 			zen = {
 				backdrop = { transparent = false },
+				minimal = true,
+				width = 140,
 			},
 		},
 	},
