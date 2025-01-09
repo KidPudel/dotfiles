@@ -1,10 +1,76 @@
+local function colorFeelAccurate(palette)
+	return {
+		String = { italic = true },
+		Boolean = { fg = palette.dragonPink },
+		Constant = { fg = palette.dragonPink },
+
+		Identifier = { fg = palette.dragonBlue },
+		Statement = { fg = palette.dragonBlue }, -- logic, focus
+		Operator = { fg = palette.dragonGray2 },
+		Keyword = { fg = palette.dragonRed }, -- strength of builtin keywords (core)
+		-- Function = { fg = palette.dragonGreen }, -- v1. i like green functions
+		-- Function = { fg = palette.dragonGreen2 }, -- v2. action
+		-- Function = { fg = palette.autumnGreen }, -- v2. action
+		Function = { fg = palette.dragonGreen2 }, -- v2. action
+
+		-- Type = { fg = palette.dragonYellow }, -- v1. creativity of custom types
+		--Type = { fg = palette.dragonGreen }, -- v2. Newness
+		Type = { fg = palette.dragonYellow }, -- v2. Newness, but more subtle
+
+		-- Special = { fg = palette.dragonOrange }, -- v1. which emphesises the maturity over the new types
+		Special = { fg = palette.dragonYellow }, -- v2. cheers, that this type is builtin
+
+		["@lsp.typemod.function.readonly"] = { fg = palette.dragonBlue },
+		["@variable.member"] = { fg = palette.dragonBlue },
+
+		["@namespace"] = { fg = palette.dragonWhite },
+	}
+end
+
+local function minimalisticColors(palette)
+	return {
+		String = { italic = true },
+
+		Operator = { fg = palette.dragonGray2 },
+
+		-- static
+		Boolean = { fg = palette.dragonPink },
+		Constant = { fg = palette.dragonPink },
+		Number = { fg = palette.dragonPink },
+
+		-- hard
+		Keyword = { fg = palette.dragonRed }, -- strength of builtin keywords (core)
+
+		-- functions
+		Function = { fg = palette.dragonOrange }, -- action
+		["@function.builtin"] = { fg = palette.dragonOrange },
+		["@lsp.type.magicFunction"] = { fg = palette.dragonOrange },
+		["@lsp.typemod.function.builtin"] = { fg = palette.dragonOrange },
+		["@lsp.typemod.function.defaultLibrary"] = { fg = palette.dragonOrange },
+		["@lsp.typemod.method.defaultLibrary"] = { fg = palette.dragonOrange },
+		["@lsp.typemod.function.readonly"] = { fg = palette.dragonOrange },
+
+		-- types
+		Type = { fg = palette.dragonYellow }, -- creativity, data structure
+		Special = { fg = palette.dragonYellow }, -- creativity, data structure
+
+		-- parameters/members
+		Identifier = { fg = palette.dragonBlue2 },
+		Statement = { fg = palette.dragonBlue2 }, -- logic, focus
+		-- ["@lsp.typemod.function.readonly"] = { fg = palette.dragonBlue },
+		["@variable.member"] = { fg = palette.dragonBlue2 },
+
+		-- variables
+		-- increase readability, fujiWhite blends too much
+		["@namespace"] = { fg = palette.dragonWhite },
+		["@variable.builtin"] = { fg = palette.dragonRed },
+		["@variable.parameter"] = { fg = palette.dragonWhite },
+		["@variable"] = { fg = palette.dragonWhite },
+		["@attribute"] = { fg = palette.dragonWhite },
+	}
+end
+
 return {
-	-- if this theme is works for you, no need to second guessing the color scheme and waste time on this bs.
-	-- It’s a good to always be evolving, always willing to let go of the comfortable old way to discover a better new way.
-	-- It's all a matter of taste and how you get used to it.
-	-- Choose one theme and stick with it, because it is a waste of time. Instead of building something cool and becoming greater, you waste your time, just pick what exists.
-	--
-	-- this theme works for me, but i want to find something new for me, to not stuck
 	-- {
 	-- 	"ellisonleao/gruvbox.nvim",
 	-- 	priority = 1000,
@@ -23,27 +89,8 @@ return {
 				keywordStyle = { italic = false },
 				overrides = function(colors)
 					local palette = colors.palette
-					return {
-						String = { italic = true },
-						Boolean = { fg = palette.dragonPink },
-						Constant = { fg = palette.dragonPink },
-
-						Identifier = { fg = palette.dragonBlue },
-						Statement = { fg = palette.dragonBlue }, -- logic, focus
-						Operator = { fg = palette.dragonGray2 },
-						Keyword = { fg = palette.dragonRed }, -- strength of builtin keywords (core)
-						-- Function = { fg = palette.dragonGreen }, -- v1. i like green functions
-						Function = { fg = palette.dragonOrange }, -- v2. action
-
-						-- Type = { fg = palette.dragonYellow }, -- v1. creativity of custom types
-						Type = { fg = palette.dragonGreen }, -- v2. Newness
-
-						-- Special = { fg = palette.dragonOrange }, -- v1. which emphesises the maturity over the new types
-						Special = { fg = palette.dragonYellow }, -- v2. cheers, that this type is builtin
-
-						["@lsp.typemod.function.readonly"] = { fg = palette.dragonBlue },
-						["@variable.member"] = { fg = palette.dragonBlue },
-					}
+					-- return colorFeelAccurate(palette)
+					return minimalisticColors(palette)
 				end,
 			})
 			vim.cmd("colorscheme kanagawa-dragon")
@@ -58,7 +105,7 @@ return {
 				styles = {
 					comments = { italic = true },
 					match_paren = { underline = false, bg = palette.gray },
-					PmenuSel = { bg = palette.yellow },
+					LspInlayHint = { bg = palette.yellow },
 				},
 			})
 		end,
