@@ -1,5 +1,8 @@
 return {
 	"folke/snacks.nvim",
+	priority = 1000,
+	lazy = false,
+	---@type snacks.Config
 	opts = {
 		dashboard = {
 			---@class snacks.dashboard.Config
@@ -28,6 +31,38 @@ return {
 				{ section = "header" },
 				{ section = "keys", gap = 1, padding = 1 },
 			},
+		},
+		toggle = {
+			map = vim.keymap.set, -- keymap.set to be used
+			which_key = true,
+		},
+		zen = {
+			toggles = {
+				dim = true,
+				git_signs = false,
+				mini_diff_signs = false,
+				inlay_hints = false,
+				diagnostics = false,
+				line_number = false,
+			},
+			show = {
+				statusline = false,
+				tabline = false,
+			},
+		},
+		styles = {
+			zen = {
+				backdrop = { transparent = false },
+			},
+		},
+	},
+	keys = {
+		{
+			"<leader>z",
+			function()
+				Snacks.zen()
+			end,
+			desc = "Toggle Zen Mode",
 		},
 	},
 }

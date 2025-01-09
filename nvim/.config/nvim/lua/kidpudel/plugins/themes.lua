@@ -5,17 +5,17 @@ return {
 	-- Choose one theme and stick with it, because it is a waste of time. Instead of building something cool and becoming greater, you waste your time, just pick what exists.
 	--
 	-- this theme works for me, but i want to find something new for me, to not stuck
-	{
-		"ellisonleao/gruvbox.nvim",
-		priority = 1000,
-		config = function()
-			require("gruvbox").setup({
-				contrast = "hard",
-			})
-			-- test from default
-			-- vim.cmd("colorscheme gruvbox")
-		end,
-	},
+	-- {
+	-- 	"ellisonleao/gruvbox.nvim",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("gruvbox").setup({
+	-- 			contrast = "hard",
+	-- 		})
+	-- 		-- test from default
+	-- 		-- vim.cmd("colorscheme gruvbox")
+	-- 	end,
+	-- },
 	-- subtle, and not distracting dark theme, less vibrant than gruvbox
 	-- very beautiful, but in practice, not comprehending with it as well as i do in gruvbox
 	-- it IS simply doesnt work for me, colors are not organized the way for me to quickly parse it, i quicker parse the plain white text
