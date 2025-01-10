@@ -93,7 +93,7 @@ return {
 					return minimalisticColors(palette)
 				end,
 			})
-			vim.cmd("colorscheme kanagawa-dragon")
+			-- vim.cmd("colorscheme kanagawa-dragon")
 		end,
 	},
 	{
@@ -104,10 +104,39 @@ return {
 				-- transparent = true,
 				styles = {
 					comments = { italic = true },
+					lsp = {
+						LspInlayHint = { bg = palette.yellow },
+						["@string"] = { fg = palette.yellow },
+					},
 					match_paren = { underline = false, bg = palette.gray },
-					LspInlayHint = { bg = palette.yellow },
+					Normal = { bg = palette.yellow },
 				},
 			})
+		end,
+	},
+	{
+		"https://github.com/RRethy/base16-nvim",
+		config = function()
+			require("base16-colorscheme").setup({
+				base00 = "#1d2021", -- bg
+				-- base01 = "#262D2B", -- accent
+				base01 = "#2D3D3A", -- accent, selection from suggestions, color of text when search,
+				base02 = "#3E4451", -- accent2, bar, selection, highlights, hightlight when suggestion
+				base03 = "#3E4451", -- comments, hints. DARK GRAY
+				base04 = "#565C64", -- line numbers, hints in suggestions on what is it besides the tipe
+				base05 = "#abb2bf", -- light gray, text
+				base06 = "#E06C75",
+				base07 = "#E06C75",
+				base08 = "#FFFFFF", -- variables
+				base09 = "#9E8DB3",
+				base0A = "#9E8DB3",
+				base0B = "#7BAE84", -- green strings
+				base0C = "#56b6c2", -- type hint?
+				base0D = "#8DBFD5",
+				base0E = "#BFBD6D", -- keyword
+				base0F = "#a06949",
+			})
+			-- vim.cmd("colorscheme base16")
 		end,
 	},
 }
