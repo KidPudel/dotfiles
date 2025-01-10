@@ -58,7 +58,7 @@ local function minimalisticColors(palette)
 		Identifier = { fg = palette.dragonBlue2 },
 		Statement = { fg = palette.dragonBlue2 }, -- logic, focus
 		-- ["@lsp.typemod.function.readonly"] = { fg = palette.dragonBlue },
-		["@variable.member"] = { fg = palette.dragonBlue2 },
+		["@variable.member"] = { fg = palette.dragonBlue3 },
 
 		-- variables
 		-- increase readability, fujiWhite blends too much
