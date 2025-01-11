@@ -14,14 +14,10 @@ return {
 		},
 	},
 	keys = {
-		-- file picker
-		-- { "<leader>p", "", desc = "File picker" },
-		-- find files in current directory
 		{ "<leader>f", "", { root = true }, desc = "Fuzzy find" },
 		{ "<leader>ff", "<cmd>FzfLua files<cr>", { root = true }, desc = "Files" },
 		{ "<leader>fo", "<cmd>FzfLua buffers<cr>", { root = true }, desc = "Buffers (opened)" },
 		{ "<leader>fr", "<cmd>FzfLua oldfiles<cr>", { root = true }, desc = "Old/recent files" },
-		-- grep (live grep)
 		{ "<leader>fg", "<cmd>FzfLua grep<cr>", { root = true }, desc = "Grep" },
 		{ "<leader>fg", "<cmd>FzfLua grep_visual<cr>", mode = { "v" }, desc = "Visual Grep" },
 		{ "<leader>fj", "<cmd>FzfLua jumps<cr>", { root = true }, desc = "Jumps" },
@@ -35,7 +31,7 @@ return {
 		{ "<leader>fk", "<cmd>FzfLua keymaps<cr>", desc = "Keymaps docs" },
 		{ "<leader>fq", "<cmd>FzfLua quickfix<cr>", desc = "Quickfix" },
 
-		{ "<leader>fc", "<cmd>FzfLua colorschemes<cr>", desc = "Colorschemes" },
+		-- { "<leader>fc", "<cmd>FzfLua colorschemes<cr>", desc = "Colorschemes" },
 		{ "<leader>fh", "<cmd>FzfLua command_history<cr>", desc = "Command history" },
 		-- leader h to switch hints
 	},
