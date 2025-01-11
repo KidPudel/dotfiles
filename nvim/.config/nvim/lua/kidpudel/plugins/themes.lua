@@ -118,6 +118,7 @@ return {
 
 			local text = "#abb2bf"
 			local dark_text = "#3E4451" -- comments, line numbers
+			local comment = "#50BA6D" -- jblows approach on making comments important, resulting in mindfulness of the comment
 
 			-- great combination, not too far from each other, vibrance level similar
 			local keyword = "#8F939A"
@@ -132,7 +133,7 @@ return {
 				base00 = bg, -- bg
 				base01 = accent, -- accent, selection from suggestions, color of text when search,
 				base02 = accent2, -- accent2, bar, selection, highlights, hightlight when suggestion, bg hightlight suggestions
-				base03 = dark_text, -- comments, hints.
+				base03 = comment, -- comments, hints.
 				base04 = dark_text, -- line numbers, hints in suggestions on what is it besides the tipe
 				base05 = text, -- text, normal mode
 				base06 = for_tesing, -- ?
