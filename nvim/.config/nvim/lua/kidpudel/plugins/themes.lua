@@ -104,12 +104,7 @@ return {
 				-- transparent = true,
 				styles = {
 					comments = { italic = true },
-					lsp = {
-						LspInlayHint = { bg = palette.yellow },
-						["@string"] = { fg = palette.yellow },
-					},
 					match_paren = { underline = false, bg = palette.gray },
-					Normal = { bg = palette.yellow },
 				},
 			})
 		end,
@@ -117,24 +112,39 @@ return {
 	{
 		"https://github.com/RRethy/base16-nvim",
 		config = function()
+			local bg = "#0F1919"
+			local accent = "#102121"
+			local accent2 = "#0D2525" -- highlight
+
+			local text = "#abb2bf"
+			local dark_text = "#3E4451" -- comments, line numbers
+
+			-- great combination, not too far from each other, vibrance level similar
+			local keyword = "#8F939A"
+			local func = "#B6AB8B"
+			local types = "#65838E"
+			local constant = "#A06057"
+
+			local for_tesing = "#FF0000"
+
+			-- green knight. 00s music inpired, rainy Vancoover, Jonathan Blow, yes science.
 			require("base16-colorscheme").setup({
-				base00 = "#1d2021", -- bg
-				-- base01 = "#262D2B", -- accent
-				base01 = "#2D3D3A", -- accent, selection from suggestions, color of text when search,
-				base02 = "#3E4451", -- accent2, bar, selection, highlights, hightlight when suggestion
-				base03 = "#3E4451", -- comments, hints. DARK GRAY
-				base04 = "#565C64", -- line numbers, hints in suggestions on what is it besides the tipe
-				base05 = "#abb2bf", -- light gray, text
-				base06 = "#E06C75",
-				base07 = "#E06C75",
-				base08 = "#FFFFFF", -- variables
-				base09 = "#9E8DB3",
-				base0A = "#9E8DB3",
-				base0B = "#7BAE84", -- green strings
-				base0C = "#56b6c2", -- type hint?
-				base0D = "#8DBFD5",
-				base0E = "#BFBD6D", -- keyword
-				base0F = "#a06949",
+				base00 = bg, -- bg
+				base01 = accent, -- accent, selection from suggestions, color of text when search,
+				base02 = accent2, -- accent2, bar, selection, highlights, hightlight when suggestion, bg hightlight suggestions
+				base03 = dark_text, -- comments, hints.
+				base04 = dark_text, -- line numbers, hints in suggestions on what is it besides the tipe
+				base05 = text, -- text, normal mode
+				base06 = for_tesing, -- ?
+				base07 = for_tesing, -- ?
+				base08 = text, -- variables, parameter of a variable, errors??, command mode
+				base09 = constant, -- constant. brownish, stability, reliablitiy and simplicity
+				base0A = types, -- all types
+				base0B = constant, -- strings. blueish for stability and reliablity
+				base0C = text, -- type hint/support, fields, visual mode
+				base0D = func, -- function, methods, attrubute IDs, markup heading
+				base0E = keyword, -- keyword and more
+				base0F = text, -- delimiters , .
 			})
 			-- vim.cmd("colorscheme base16")
 		end,
