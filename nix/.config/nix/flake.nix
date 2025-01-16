@@ -31,7 +31,6 @@
 			pkgs.stow
             # pkgs.zellij
             pkgs.zoxide
-            pkgs.postgresql
             pkgs.sqlite
             pkgs.ripgrep
             pkgs.raylib
@@ -74,7 +73,7 @@
 			"protoc-gen-go"
 			"fzf"
 			"bat"
-			# "postgresql@17"
+			"postgresql@16"
 			# "ghostscript"
 			# "tesseract-lang"
         ];
