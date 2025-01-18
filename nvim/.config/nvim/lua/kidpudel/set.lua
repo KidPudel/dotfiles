@@ -36,9 +36,8 @@ vim.opt.updatetime = 50
 vim.g.maplocalleader = "\\"
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>%", "<cmd>vsplit<cr>")
-
 -- general bindings
+vim.keymap.set("n", "<leader>%", "<cmd>vsplit<cr>")
 vim.keymap.set("n", '<leader>"', "<cmd>split<cr>")
 vim.keymap.set("n", "<leader>/", "<cmd>:noh<cr>")
 -- move line up and down
@@ -48,3 +47,6 @@ vim.keymap.set("n", "<C-k>", "<cmd>:m .-2<cr>")
 vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
 -- Move selected block of code up
 vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
+
+vim.keymap.set("n", "<leader>cz", ":lua require('cmp').setup.buffer {enabled = false}")
+vim.keymap.set("n", "<leader>cc", ":lua require('cmp').setup.buffer {enabled = true}")
