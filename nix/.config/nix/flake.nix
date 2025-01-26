@@ -34,6 +34,7 @@
             pkgs.sqlite
             pkgs.ripgrep
             pkgs.raylib
+			pkgs.sdl3
             # languages
             pkgs.go
             pkgs.pyenv
@@ -64,7 +65,6 @@
         enable = true;
         casks = [
             "hammerspoon"
-            # "wezterm"
 			"ghostty"
 			"raycast"
         ];
@@ -74,8 +74,6 @@
 			"fzf"
 			"bat"
 			"postgresql@16"
-			# "ghostscript"
-			# "tesseract-lang"
         ];
         onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;
