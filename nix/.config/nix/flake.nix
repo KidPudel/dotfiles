@@ -23,6 +23,7 @@
             # pkgs.raycast
 
             # for creating app aliases
+			pkgs.nix
             pkgs.mkalias
             # packages
             pkgs.neovim
@@ -34,7 +35,6 @@
             pkgs.sqlite
             pkgs.ripgrep
             pkgs.raylib
-			pkgs.sdl3
             # languages
             pkgs.go
             pkgs.pyenv
@@ -74,6 +74,8 @@
 			"fzf"
 			"bat"
 			"postgresql@16"
+			"sdl2"
+			"sdl3"
         ];
         onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;
