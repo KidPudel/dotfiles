@@ -76,6 +76,9 @@
 			"postgresql@16"
 			"sdl2"
 			"sdl3"
+			"sdl2_image"
+			"sdl2_ttf"
+			"sdl2_mixer"
         ];
         onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;
