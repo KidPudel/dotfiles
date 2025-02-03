@@ -110,7 +110,7 @@
       system.defaults = {
           dock.autohide = true;
           dock.persistent-apps = [
-            "/Applications/Arc.app"
+            "/Applications/Brave.app"
             "/Applications/Ghostty.app"
             "/Applications/Obsidian.app"
             "/System/Applications/Notes.app"
