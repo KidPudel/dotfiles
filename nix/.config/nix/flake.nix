@@ -74,9 +74,8 @@
 			"fzf"
 			"bat"
 			"postgresql@16"
-			"sdl2"
 			"sdl3"
-			"sdl2_image"
+			"sdl3_image"
 			"sdl2_ttf"
 			"sdl2_mixer"
         ];
