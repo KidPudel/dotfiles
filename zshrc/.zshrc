@@ -48,7 +48,7 @@ export PATH="$HOME/Odin:$PATH"
 
 export PATH="$HOME/kafka_2.13-3.9.0/bin:$PATH"
 
-export PATH = "$HOME/VulkanSDK/1.4.304.1/macOS/bin:$PATH"
+export PATH="$HOME/VulkanSDK/1.4.304.1/macOS/bin:$PATH"
 
 eval "$(zoxide init --cmd cd zsh)"
 
