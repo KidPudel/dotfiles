@@ -55,6 +55,10 @@ return {
 						vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
 					end,
 				},
+				completion = {
+					-- turn off annoying unwanted pile of suggestions into my face
+					autocomplete = false,
+				},
 			})
 		end,
 	},

@@ -17,6 +17,8 @@ return {
 				"python",
 				"html",
 				"json",
+				"glsl",
+				"bash",
 			},
 			highlight = { enable = true },
 			indent = { enable = true },

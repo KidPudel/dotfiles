@@ -1,5 +1,5 @@
 -- line numbers
-vim.opt.nu = true
+vim.opt.nu = false
 vim.opt.relativenumber = false
 
 -- tab
@@ -48,5 +48,8 @@ vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
 -- Move selected block of code up
 vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("n", "<leader>cz", ":lua require('cmp').setup.buffer {enabled = false}")
-vim.keymap.set("n", "<leader>cc", ":lua require('cmp').setup.buffer {enabled = true}")
+-- vim.keymap.set("n", "<leader>cz", ":lua require('cmp').setup.buffer {enabled = false}")
+-- vim.keymap.set("n", "<leader>cc", ":lua require('cmp').setup.buffer {enabled = true}")
+vim.keymap.set("n", "<leader>cz", function()
+	vim.opt.nu = not vim.opt.nu:get()
+end, { silent = true })

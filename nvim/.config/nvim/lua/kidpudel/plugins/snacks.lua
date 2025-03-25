@@ -54,7 +54,7 @@ return {
 			zen = {
 				backdrop = { transparent = false },
 				minimal = true,
-				width = 140,
+				width = 160,
 			},
 		},
 	},
@@ -62,6 +62,7 @@ return {
 		{
 			"<leader>z",
 			function()
+				---@type fun(opts: snacks.zen.Config): snacks.win
 				Snacks.zen()
 			end,
 			desc = "Toggle Zen Mode",

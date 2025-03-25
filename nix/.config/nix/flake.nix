@@ -78,6 +78,7 @@
 			"sdl3_image"
 			"sdl2_ttf"
 			"sdl2_mixer"
+			"glew"
         ];
         onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;
