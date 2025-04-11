@@ -1,6 +1,6 @@
 font-family = "Roboto Mono"
 font-style = "bold"
-font-size = 13.0
+font-size = 16.0
 font-feature = "-calt -liga -dlig"
 
 macos-titlebar-style = hidden
@@ -11,6 +11,9 @@ window-padding-y = 0
 
 
 mouse-hide-while-typing = true
+
+cursor-style = block
+cursor-style-blink = false
 
 macos-option-as-alt = true
 

@@ -95,6 +95,9 @@ return {
 					},
 				},
 			})
+			lspconfig.golangci_lint_ls.setup({
+				capabilities = capabilities,
+			})
 			lspconfig.ols.setup({
 				capabilities = capabilities,
 			})

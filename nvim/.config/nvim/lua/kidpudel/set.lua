@@ -48,6 +48,16 @@ vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
 -- Move selected block of code up
 vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
 
+-- Indent line in normal mode
+vim.keymap.set("n", "<C-l>", ">>")
+-- Unindent line in normal mode
+vim.keymap.set("n", "<C-h>", "<<")
+
+-- Indent selected block in visual mode
+vim.keymap.set("v", "<C-l>", ">gv")
+-- Unindent selected block in visual mode
+vim.keymap.set("v", "<C-h>", "<gv")
+
 -- vim.keymap.set("n", "<leader>cz", ":lua require('cmp').setup.buffer {enabled = false}")
 -- vim.keymap.set("n", "<leader>cc", ":lua require('cmp').setup.buffer {enabled = true}")
 vim.keymap.set("n", "<leader>cz", function()
