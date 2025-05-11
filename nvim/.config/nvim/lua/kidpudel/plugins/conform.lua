@@ -4,7 +4,7 @@ return {
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {
-				go = { "goimports-reviser" }, -- gofmt is not in mason, it is a part of golang toolchain
+				go = { "goimports-reviser", "gofumpt", "golines" }, -- gofmt is not in mason, it is a part of golang toolchain
 				python = { "black" },
 				lua = { "stylua" },
 				html = { "prettier" },
@@ -13,15 +13,13 @@ return {
 				javascript = { "biome" },
 				typescript = { "biome" },
 			},
-			-- formatters = {
-			-- 	golines = {
-			-- 		command = "golines",
-			-- 		args = {
-			-- 			"-m",
-			-- 			"100",
-			-- 		},
-			-- 	},
-			-- },
+			formatters = {
+				golines = {
+					command = "golines",
+					args = { "-m", "120", "--base-formatter", "gofumpt" },
+					stdin = true,
+				},
+			},
 			format_on_save = function(bufnr)
 				if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
 					return
