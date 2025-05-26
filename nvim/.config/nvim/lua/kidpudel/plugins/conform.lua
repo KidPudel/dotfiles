@@ -4,7 +4,7 @@ return {
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {
-				go = { "goimports-reviser", "gofumpt", "golines" }, -- gofmt is not in mason, it is a part of golang toolchain
+				go = { "goimports-reviser", "gofumpt", "golines" },
 				python = { "black" },
 				lua = { "stylua" },
 				html = { "prettier" },

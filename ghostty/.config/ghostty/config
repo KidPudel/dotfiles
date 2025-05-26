@@ -24,9 +24,11 @@ macos-option-as-alt = true
 
 
 # green-knight theme -----
-theme = GruvBoxDark
-background = "#0F1919"
+# theme = GruvBoxDark
+# background = "#0F1919"
 
+
+theme = mellow
 
 link-url = true
 

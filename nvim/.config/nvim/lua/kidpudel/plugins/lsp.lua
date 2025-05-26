@@ -44,6 +44,7 @@ return {
 		},
 		opts = {
 			inlay_hints = { enabled = true },
+			diagnostics = { virtual_text = true },
 		},
 		config = function()
 			-- broadcast completions to the LSPs
@@ -60,8 +61,34 @@ return {
 
 			local lspconfig = require("lspconfig")
 
+			-- ui
+			local border = {
+				{ "┌", "FloatBorder" },
+				{ "─", "FloatBorder" },
+				{ "┐", "FloatBorder" },
+				{ "│", "FloatBorder" },
+				{ "┘", "FloatBorder" },
+				{ "─", "FloatBorder" },
+				{ "└", "FloatBorder" },
+				{ "│", "FloatBorder" },
+			}
+
+			-- Add the border on hover and on signature help popup window
+			local handlers = {
+				["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+				["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+			}
+
+			vim.diagnostic.config({
+				virtual_text = {
+					prefix = "■ ", -- Could be '●', '▎', 'x', '■', , 
+				},
+				float = { border = border },
+			})
+
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
+				handlers = handlers,
 				settings = {
 					Lua = {
 						hint = {
@@ -78,6 +105,7 @@ return {
 			})
 			lspconfig.gopls.setup({
 				capabilities = capabilities,
+				handlers = handlers,
 				settings = {
 					gopls = {
 						hints = {
@@ -97,24 +125,31 @@ return {
 			})
 			lspconfig.golangci_lint_ls.setup({
 				capabilities = capabilities,
+				handlers = handlers,
 			})
 			lspconfig.ols.setup({
 				capabilities = capabilities,
+				handlers = handlers,
 			})
 			lspconfig.html.setup({
 				capabilities = capabilities,
+				handlers = handlers,
 			})
 			lspconfig.jsonls.setup({
 				capabilities = capabilities,
+				handlers = handlers,
 			})
 			lspconfig.pyright.setup({
 				capabilities = capabilities,
+				handlers = handlers,
 			})
 			lspconfig.dockerls.setup({
 				capabilities = capabilities,
+				handlers = handlers,
 			})
 			lspconfig.docker_compose_language_service.setup({
 				capabilities = capabilities,
+				handlers = handlers,
 			})
 
 			-- only on lsp attaches to the buffer
@@ -138,7 +173,9 @@ return {
 					-- end
 
 					-- global bindings
-					vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+					vim.keymap.set("n", "K", function()
+						vim.lsp.buf.hover({ border = border })
+					end, opts)
 					vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 					vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 					vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)

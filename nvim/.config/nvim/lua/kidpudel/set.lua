@@ -63,3 +63,7 @@ vim.keymap.set("v", "<C-h>", "<gv")
 vim.keymap.set("n", "<leader>cz", function()
 	vim.opt.nu = not vim.opt.nu:get()
 end, { silent = true })
+
+-- system clipboard qol
+vim.keymap.set({ "n", "x" }, "<leader>sy", '"+y', { silent = true })
+vim.keymap.set({ "n", "x" }, "<leader>sp", '"+p', { silent = true })

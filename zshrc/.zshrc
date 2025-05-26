@@ -2,7 +2,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export PATH="$PATH:$(go env GOPATH)/bin"
 export PATH="$PATH:/Applications/GoLand.app/Contents/MacOS"
-export WISHLIST_BOT_TOKEN=6746217941:AAHTnbmvw__XKzLQpu91bFIVTeSoZSpvyBY
+export PATH="$PATH:/Applications/CLion.app/Contents/MacOS"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -53,6 +53,12 @@ export PATH="$HOME/Odin:$PATH"
 export PATH="$HOME/kafka_2.13-3.9.0/bin:$PATH"
 
 export PATH="$HOME/VulkanSDK/1.4.304.1/macOS/bin:$PATH"
+
+
+# love2d
+export PATH="$PATH:/Applications/love.app/Contents/MacOS"
+alias love="/Applications/love.app/Contents/MacOS/love"
+
 
 eval "$(zoxide init --cmd cd zsh)"
 
