@@ -12,6 +12,7 @@ return {
 				markdown = { "prettier" },
 				javascript = { "biome" },
 				typescript = { "biome" },
+				gdscript = { "gdtoolkit" },
 			},
 			formatters = {
 				golines = {

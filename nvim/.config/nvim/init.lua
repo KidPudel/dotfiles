@@ -1,3 +1,2 @@
 -- my config
 require("kidpudel")
-

@@ -36,7 +36,6 @@ vim.opt.updatetime = 50
 vim.g.maplocalleader = "\\"
 vim.g.mapleader = " "
 
--- general bindings
 vim.keymap.set("n", "<leader>%", "<cmd>vsplit<cr>")
 vim.keymap.set("n", '<leader>"', "<cmd>split<cr>")
 vim.keymap.set("n", "<leader>/", "<cmd>:noh<cr>")

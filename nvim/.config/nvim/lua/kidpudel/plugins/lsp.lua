@@ -59,7 +59,7 @@ return {
 
 			local capabilities = vim.tbl_deep_extend("force", folding_capabilities, cmp_capabilities)
 
-			local lspconfig = require("lspconfig")
+			local lspconfig = vim.lsp.config
 
 			-- ui
 			local border = {
@@ -86,7 +86,7 @@ return {
 				float = { border = border },
 			})
 
-			lspconfig.lua_ls.setup({
+			lspconfig("lua_ls", {
 				capabilities = capabilities,
 				handlers = handlers,
 				settings = {
@@ -103,7 +103,7 @@ return {
 					},
 				},
 			})
-			lspconfig.gopls.setup({
+			lspconfig("gopls", {
 				capabilities = capabilities,
 				handlers = handlers,
 				settings = {
@@ -123,34 +123,51 @@ return {
 					},
 				},
 			})
-			lspconfig.golangci_lint_ls.setup({
+			lspconfig("golangci_lint_ls", {
 				capabilities = capabilities,
 				handlers = handlers,
 			})
-			lspconfig.ols.setup({
+			lspconfig("ols", {
 				capabilities = capabilities,
 				handlers = handlers,
 			})
-			lspconfig.html.setup({
+			lspconfig("html", {
 				capabilities = capabilities,
 				handlers = handlers,
 			})
-			lspconfig.jsonls.setup({
+			lspconfig("jsonls", {
 				capabilities = capabilities,
 				handlers = handlers,
 			})
-			lspconfig.pyright.setup({
+			lspconfig("pyright", {
 				capabilities = capabilities,
 				handlers = handlers,
 			})
-			lspconfig.dockerls.setup({
+			lspconfig("dockerls", {
 				capabilities = capabilities,
 				handlers = handlers,
 			})
-			lspconfig.docker_compose_language_service.setup({
+			lspconfig("docker_compose_language_service", {
 				capabilities = capabilities,
 				handlers = handlers,
 			})
+			lspconfig("luau_lsp", {
+				capabilities = capabilities,
+				handlers = handlers,
+				platform = {
+					type = "roblox",
+				},
+				types = {
+					roblox_security_level = "PluginSecurity",
+				},
+			})
+			-- lspconfig("gdscript", {
+			-- 	capabilities = capabilities,
+			-- 	handlers = handlers,
+			-- })
+			-- vim.keymap.set("n", "<leader>gs", function()
+			-- 	vim.fn.serverstart("127.0.0.1:6005")
+			-- end)
 
 			-- only on lsp attaches to the buffer
 			vim.api.nvim_create_autocmd("LspAttach", {

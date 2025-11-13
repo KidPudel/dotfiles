@@ -1,9 +1,5 @@
 return {
 	{
-		"folke/todo-comments.nvim",
-	},
-	-- better comments
-	{
 		"numToStr/Comment.nvim",
 		opts = {
 			toggler = {
@@ -12,6 +8,12 @@ return {
 			opleader = {
 				line = "<leader>c/",
 			},
+		},
+	},
+	{
+		"folke/todo-comments.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
 		},
 	},
 }
