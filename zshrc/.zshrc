@@ -64,6 +64,8 @@ alias love="/Applications/love.app/Contents/MacOS/love"
 # godot
 alias godot="/Applications/Godot.app/Contents/MacOS/Godot"
 
+# emacs
+export PATH="$HOME/.emacs.d/bin:$PATH"
 
 
 eval "$(zoxide init --cmd cd zsh)"
@@ -71,3 +73,4 @@ eval "$(zoxide init --cmd cd zsh)"
 
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+

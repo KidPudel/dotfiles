@@ -1,6 +1,6 @@
 -- line numbers
 vim.opt.nu = false
-vim.opt.relativenumber = false
+-- vim.opt.relativenumber = true
 
 -- tab
 vim.opt.tabstop = 4
@@ -19,6 +19,7 @@ vim.opt.backup = false -- maybe
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
+vim.o.signcolumn = "yes"
 -- incremental/smart search /something* =
 vim.opt.incsearch = true
 
@@ -32,6 +33,8 @@ vim.opt.scrolloff = 8
 
 -- ?
 vim.opt.updatetime = 50
+
+vim.o.winborder = "rounded"
 
 vim.g.maplocalleader = "\\"
 vim.g.mapleader = " "
@@ -61,7 +64,7 @@ vim.keymap.set("v", "<C-h>", "<gv")
 -- vim.keymap.set("n", "<leader>cc", ":lua require('cmp').setup.buffer {enabled = true}")
 vim.keymap.set("n", "<leader>cz", function()
 	vim.opt.nu = not vim.opt.nu:get()
-end, { silent = true })
+end, { silent = false })
 
 -- system clipboard qol
 vim.keymap.set({ "n", "x" }, "<leader>sy", '"+y', { silent = true })

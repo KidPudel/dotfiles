@@ -61,30 +61,11 @@ return {
 
 			local lspconfig = vim.lsp.config
 
-			-- ui
-			local border = {
-				{ "┌", "FloatBorder" },
-				{ "─", "FloatBorder" },
-				{ "┐", "FloatBorder" },
-				{ "│", "FloatBorder" },
-				{ "┘", "FloatBorder" },
-				{ "─", "FloatBorder" },
-				{ "└", "FloatBorder" },
-				{ "│", "FloatBorder" },
-			}
-
 			-- Add the border on hover and on signature help popup window
 			local handlers = {
 				["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
 				["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
 			}
-
-			vim.diagnostic.config({
-				virtual_text = {
-					prefix = "■ ", -- Could be '●', '▎', 'x', '■', , 
-				},
-				float = { border = border },
-			})
 
 			lspconfig("lua_ls", {
 				capabilities = capabilities,
@@ -159,6 +140,12 @@ return {
 				},
 				types = {
 					roblox_security_level = "PluginSecurity",
+				},
+				sourcemap = {
+					enabled = true,
+					autogenerate = true, -- automatic generation when the server is initialized
+					rojo_project_file = "default.project.json",
+					sourcemap_file = "sourcemap.json",
 				},
 			})
 			-- lspconfig("gdscript", {

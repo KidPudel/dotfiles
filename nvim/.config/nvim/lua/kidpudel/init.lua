@@ -1,2 +1,2 @@
 require("kidpudel.set")
-require("kidpudel.lazy")
+require("kidpudel.pack")
