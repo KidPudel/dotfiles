@@ -6,7 +6,6 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-lua/plenary.nvim"},
 	{ src = "https://github.com/numToStr/Comment.nvim" },
 	{ src = "https://github.com/ibhagwan/fzf-lua" },
-	{ src = "https://github.com/nvim-mini/mini.pick" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	-- cs"' ds" ysiw" no need to require
 	{ src = "https://github.com/tpope/vim-surround" },
@@ -44,12 +43,12 @@ require("blink.cmp").setup({
 })
 
 
-require("mason").setup()
-
 
 -- Define LSP keybindings
 local on_attach = function(_client, bufnr)
 	local opts = { buffer = bufnr, silent = true }
+
+	-- print("LSP attached to ".._client .. " to buffer " .. bufnr)
 
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
@@ -74,60 +73,63 @@ local handlers = {
 
 require("mason-lspconfig").setup({
     automatic_installation = true,
+
+    ---@type boolean | string[] | { exclude: string[] }
 	automatic_enable = {
 		exclude = { "luau_lsp" },
 	},
-	handlers = {
-		function(server_name)
-			local opts = {
-				on_attach = on_attach,
-				handlers = handlers,
-				capabilities = capabilities
-			}
+})
 
-			if server_name == "lua_ls" then
-				opts.settings = {
-					Lua = {
-						hint = {
-							enable = true,
-							arrayindex = "enable", -- enable hints for array index
-							await = true, -- hints for await
-							paramName = "All", -- Hints for parameter names
-							paramType = true, -- Hints for parameter types
-							semicolon = "Disable", -- Disable semicolon hints
-							setType = true, -- Hints for type setting
-						},
-					},
-				}
-			elseif server_name == "luau_ls" then
-				opts.completion = {
-					imports = {
-						enabled = true, -- enable auto imports
-					},
-				}
-			elseif server_name == "gopls" then
-				opts.settings = {
-					gopls = {
-						hints = {
-							-- assignVariableTypes = true,
-							-- compositeLiteralFields = true,
-							-- compositeLiteralTypes = true,
-							-- constantValues = true,
-							functionTypeParameters = true,
-							parameterNames = true,
-							rangeVariableTypes = true,
-						},
-						gofumpt = true,
-						usePlaceholders = true,
-						completeUnimported = true,
-					},
-				}
-			end
+local lspconfig = vim.lsp.config
 
-			require("lspconfig")[server_name].setup(opts)
-		end
+lspconfig("*", {
+	on_attach = on_attach,
+	handlers = handlers,
+	capabilities = capabilities,
+})
+
+lspconfig("lua_ls", {
+	settings = {
+		Lua = {
+			hint = {
+				enable = true,
+				arrayindex = "enable", -- enable hints for array index
+				await = true, -- hints for await
+				paramName = "All", -- Hints for parameter names
+				paramType = true, -- Hints for parameter types
+				semicolon = "Disable", -- Disable semicolon hints
+				setType = true, -- Hints for type setting
+			},
+		},
 	}
 })
+lspconfig("luau_ls", {
+	completion = {
+		imports = {
+			enabled = true, -- enable auto imports
+		},
+	}
+})
+
+lspconfig("gopls", {
+	settings = {
+		gopls = {
+			hints = {
+				-- assignVariableTypes = true,
+				-- compositeLiteralFields = true,
+				-- compositeLiteralTypes = true,
+				-- constantValues = true,
+				functionTypeParameters = true,
+				parameterNames = true,
+				rangeVariableTypes = true,
+			},
+			gofumpt = true,
+			usePlaceholders = true,
+			completeUnimported = true,
+		},
+	}
+})
+
 require("oil").setup({
 		wrap = false,
         view_options = {
@@ -135,7 +137,6 @@ require("oil").setup({
         }
 })
 require("fzf-lua").setup()
-require("mini.pick").setup()
 require("comment").setup({
 	toggler = {
 		line = "<leader>c/",
