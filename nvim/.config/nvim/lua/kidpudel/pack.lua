@@ -61,6 +61,7 @@ local on_attach = function(_client, bufnr)
 	vim.keymap.set("n", "<leader>h", function()
 		vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(bufnr), bufnr)
 	end)
+	vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, opts)
 end
 
 
@@ -212,7 +213,7 @@ vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files<cr>", { desc = "Files" })
 vim.keymap.set("n", "<leader>fo", "<cmd>FzfLua buffers<cr>", { desc = "Buffers (opened)" })
 vim.keymap.set("n", "<leader>fr", "<cmd>FzfLua oldfiles<cr>", { desc = "Old/recent files" })
 vim.keymap.set("n", "<leader>fg", "<cmd>FzfLua grep<cr>", { desc = "Grep" })
-vim.keymap.set("n", "<leader>fg", "<cmd>FzfLua grep_visual<cr>", { desc = "Visual Grep" })
+vim.keymap.set("x", "<leader>fg", "<cmd>FzfLua grep_visual<cr>", { desc = "Visual Grep" })
 vim.keymap.set("n", "<leader>fj", "<cmd>FzfLua jumps<cr>", { desc = "Jumps" })
 vim.keymap.set("n", "<leader>fp", "<cmd>FzfLua grep<cr>", { desc = "Projects" })
 vim.keymap.set("n", "<leader>fR", "<cmd>FzfLua lsp_references<cr>", { desc = "References" })

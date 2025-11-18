@@ -5,6 +5,9 @@ font-feature = "-calt -liga -dlig"
 adjust-cell-height = 20%
 
 # macos-titlebar-style = hidden
+window-save-state = always
+shell-integration=zsh
+# shell-integration-features = title,
 
 window-padding-balance = true
 window-padding-x = 0
@@ -40,8 +43,3 @@ keybind = ctrl+a>n=next_tab
 keybind = ctrl+a>p=previous_tab
 
 keybind = super+r=reload_config
-
-window-save-state = always
-
-
-
